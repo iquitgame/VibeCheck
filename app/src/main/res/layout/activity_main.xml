@@ -28,6 +28,7 @@
         android:gravity="center"
         android:inputType="textPersonName"
         android:text="Input"
+        android:foregroundGravity="top"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/button2"
@@ -35,5 +36,17 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="406dp"
+        android:layout_height="395dp"
+        android:background="#00FF0000"
+        android:gravity="top"
+        android:onClick="getSpeechInput"
+        android:text="Press upper half for speech to text"
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-4dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
