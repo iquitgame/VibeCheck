@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
     public void vibrate(){
         //AudioManager audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
         //int CURRENT_MODE = audioManager.getMode();
-        //audioManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
+        //audioManager.setRingerMode(AudioManager.RIbnxNGER_MODE_NORMAL);
 
         TextView textView = (TextView)findViewById(R.id.editText);
         CharSequence chars = textView.getText();
