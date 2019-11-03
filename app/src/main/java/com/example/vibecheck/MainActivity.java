@@ -13,13 +13,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.Console;
 import java.util.ArrayList;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
     Vibrator vibrator;
-    TextView textResults = (TextView)findViewById(R.id.editText);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -157,6 +158,12 @@ public class MainActivity extends AppCompatActivity {
                         case '0':
                             morse = new long[]{DASH, PAUSE, DASH, PAUSE, DASH, PAUSE, DASH, PAUSE, DASH, PAUSE};
                             break;
+                        case ' ':
+                            morse = new long[]{0,PAUSE};
+                            break;
+                        case '.':
+                            morse = new long[]{0,PAUSE*3};
+                            break;
                         default:
                             morse = new long[]{DASH * 3};
                     }
@@ -198,11 +205,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult (int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
+        TextView textResults = (TextView)findViewById(R.id.editText);
         switch (requestCode){
             case 10:
-                if (requestCode == RESULT_OK && data != null) {
+                if (resultCode == RESULT_OK && data != null) {
                     ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    Log.e("Flag",result.get(0));
                     textResults.setText(result.get(0));
                 }
                 break;

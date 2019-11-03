@@ -27,7 +27,7 @@
         android:layout_height="100dp"
         android:gravity="center"
         android:inputType="textPersonName"
-        android:text="Input"
+        android:text="Up speak. Down morse"
         android:foregroundGravity="top"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#000000"
